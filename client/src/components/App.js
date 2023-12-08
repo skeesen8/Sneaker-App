@@ -4,6 +4,7 @@ import { ChakraProvider, RangeSliderProvider,Button,size } from '@chakra-ui/reac
 
 
 import Signup from "./Signup";
+import Navbar from "./Navbar";
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
         <ChakraProvider>
 
         <div>
+          <Navbar/>
           in the site
           <Button onClick={handleLogout} size="sm" colorScheme='teal'>Logout</Button>
         </div>
