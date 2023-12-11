@@ -5,19 +5,32 @@ import { createRoot } from "react-dom/client";
 import {createBrowserRouter,RouterProvider} from "react-router-dom"
 import ReactDOM from 'react-dom/client';
 import Navbar from "./components/Navbar";
+import ShoesContainer from "./components/ShoesContainer";
+import AddShoe from "./components/AddShoe"
+import ShoeById from "./components/ShoeById";
+import Bids from "./components/Bids";
+
 
 
 const routes=[
     {
         path:"/",
-        element:<><Navbar /></>
+        element:<><App/></>
     },{
+        // path:"/",
+        // element:<><Navbar/><AddShoe/></>
+
+    }, {
         path:"/shoes",
-        element:<><Navbar /></>
+        element:<><Navbar /><ShoesContainer/></>
     },{
         path:"/bids",
-        element:<><Navbar/></>
+        element:<><Navbar/><Bids/></>
         
+    },{
+        path:"/listings/:id",
+        element:<><Navbar /><ShoeById/></>
+
     }
 ]
 const router=createBrowserRouter(routes)

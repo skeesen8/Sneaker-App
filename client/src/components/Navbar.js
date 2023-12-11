@@ -1,24 +1,25 @@
 import * as React from "react";
-import {Link } from "react-router-dom";
+import {Link} from "react-router-dom";
+import {Breadcrumb,BreadcrumbItem,BreadcrumbLink,BreadcrumbSeparator,Button} from '@chakra-ui/react'
 
 
-function Navbar(){
+function Navbar({handleLogout}){
 
     return(
-        <nav>
-            <ul>
-                <Link to="/">   
-                    <p>Home</p>
-                </Link>
-                <Link to="/shoes">
-                    <p>Shoes for sale</p>
-                </Link>
-                <Link to="/bids">
-                    <p>Bids</p>
-                </Link>
-            </ul>  
-        </nav>
-    
+        <Breadcrumb>             
+                    <BreadcrumbItem>
+                        <BreadcrumbLink as={Link} to='/'>Home</BreadcrumbLink>
+                    </BreadcrumbItem>
+
+                    <BreadcrumbItem>
+                        <BreadcrumbLink as={Link} to='/shoes'>Shoes for Sale</BreadcrumbLink>
+                    </BreadcrumbItem>
+
+                    <BreadcrumbItem>
+                        <BreadcrumbLink as={Link} to='/bids'>Bids</BreadcrumbLink>
+                    </BreadcrumbItem>      
+                    <Button onClick={handleLogout} size="sm" colorScheme='teal'>Logout</Button>  
+        </Breadcrumb>
     )
 }
 
