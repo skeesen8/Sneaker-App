@@ -37,8 +37,8 @@ class Bids(Resource):
         params=request.get_json()
         bid=Bid(bid_amount=params['bid_amount'],
                 listing_id=params['listing_id'],
+                users_id=params['users_id'],
                 )
-                # users_id=params['users_id'],
                 # created_at=params['created_at'])
         db.session.add(bid)
         db.session.commit()
