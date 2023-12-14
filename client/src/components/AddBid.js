@@ -28,7 +28,7 @@ import {useParams} from 'react-router-dom'
                 const updatedBid ={
                     bid_amount:bid_amount,
                     listing_id:parseInt(id),
-                    // users_id:users_id,
+                    users_id:4,
                     // created_at:created_at,
                 }
                 fetch(`/bids`,{
