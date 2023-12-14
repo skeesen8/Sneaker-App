@@ -8,7 +8,6 @@ class Bid(SerializerMixin, db.Model):
 
     serialize_rules = ('-listing.bids','-user.bids')
 
-
     id=db.Column(db.Integer,primary_key=True)
     bid_amount=db.Column(db.Integer)
     listing_id=db.Column(db.Integer,db.ForeignKey('listings.id'))

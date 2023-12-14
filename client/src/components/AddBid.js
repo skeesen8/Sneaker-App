@@ -7,7 +7,7 @@ import {useParams} from 'react-router-dom'
 
     function AddBid({price,}) {
             const [value, setValue] = useState(0)
-            const [bid_amount,setBidPrice] = useState("")
+            // const [bid_amount,setBidPrice] = useState("")
             const handleChange = (value) => setValue(value)
             const format = (val) => `$` + val
             const parse = (val) => val.replace(/^\$/, '')
@@ -16,19 +16,21 @@ import {useParams} from 'react-router-dom'
             console.log(value)
 
 
-            function handleBidAmout(){
-                setBidPrice(value)
-            }
+            // function handleBidAmout(){
+            //     setBidPrice(value)
+            // }
           
 
             function updateItemPrice(e){
                 e.preventDefault();
-                handleBidAmout()
+                // handleBidAmout()
                 // setBidPrice(value)
                 const updatedBid ={
-                    bid_amount:bid_amount,
+                    bid_amount:value,
                     listing_id:parseInt(id),
+
                     users_id:4,
+
                     // created_at:created_at,
                 }
                 fetch(`/bids`,{
