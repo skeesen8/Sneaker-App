@@ -64,6 +64,13 @@ class Bid_By_Id(Resource):
             db.session.commit()
             return make_response('', 200)
         
+    def get(self,id):
+        bid = Bid.query.get(id)
+        if not bid:
+            return make_response({'error':'bid not found'})
+        else:
+            return make_response(bid.to_dict(),200)
+        
 api.add_resource(Bid_By_Id,'/api/v1/bids/<id>')
 
 
@@ -85,6 +92,15 @@ class Listing_by_Id(Resource):
             return make_response(listing.to_dict(),202)
         
 api.add_resource(Listing_by_Id,"/api/v1/listings/<id>")
+
+# class Bid_by_Id(Resource):
+#     def get(self,id):
+#         bid = Bid.query.get(id)
+#         if not bid:
+#             return make_response({'error':'bid not found'})
+#         else:
+#             return make_response(bid.to_dict(),200)
+# api.add_resource(Bid_By_Id,"/api/v1/bids/<id>")
 
 
 
