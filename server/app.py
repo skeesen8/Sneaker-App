@@ -81,6 +81,7 @@ class Get_All_Listings(Resource):
             return make_response({'error':'no listings'}, 400)
         return make_response(listings,200)
     
+    
 api.add_resource(Get_All_Listings,'/api/v1/listings')
 
 class Listing_by_Id(Resource):
@@ -91,18 +92,15 @@ class Listing_by_Id(Resource):
         else:
             return make_response(listing.to_dict(),202)
         
+    def delete(self,id):
+        shoe = Listing.query.get(id)
+        if not shoe:
+            return make_response({'error':'shoe not found'})
+        else:
+            return make_response(shoe.to_dict(),200)
+
+        
 api.add_resource(Listing_by_Id,"/api/v1/listings/<id>")
-
-# class Bid_by_Id(Resource):
-#     def get(self,id):
-#         bid = Bid.query.get(id)
-#         if not bid:
-#             return make_response({'error':'bid not found'})
-#         else:
-#             return make_response(bid.to_dict(),200)
-# api.add_resource(Bid_By_Id,"/api/v1/bids/<id>")
-
-
 
 
 class Users(Resource):
