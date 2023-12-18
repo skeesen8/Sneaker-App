@@ -23,7 +23,7 @@ class Listings(Resource):
                         image=params['image'],
                         description=params['description'],
                         favorite = params['favorite'],
-                        user_id = params['user_id']
+                        user_id = session.get('user_id')
                 )
         db.session.add(listing)
         db.session.commit()
@@ -97,7 +97,9 @@ class Listing_by_Id(Resource):
         if not shoe:
             return make_response({'error':'shoe not found'})
         else:
-            return make_response(shoe.to_dict(),200)
+            db.session.delete(shoe)
+            db.session.commit()
+            return make_response(shoe.to_dict(),204)
 
         
 api.add_resource(Listing_by_Id,"/api/v1/listings/<id>")
