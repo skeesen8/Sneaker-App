@@ -1,7 +1,9 @@
 
 import React, {useState,} from 'react';
 import { useNavigate } from "react-router-dom";
-import {FormControl, FormLabel,Input,Button, ChakraProvider,} from '@chakra-ui/react'
+import {FormControl, FormLabel,Input,Button, ChakraProvider,Heading} from '@chakra-ui/react'
+
+import Home from './Home';
 
 function AddShoe(){
     const navigate = useNavigate();
@@ -61,6 +63,9 @@ function AddShoe(){
     return(
 
         <FormControl>
+            <Heading as='h1' size='4xl' noOfLines={1}>
+          Enter your shoe information below!
+          </Heading>
         <form onSubmit={handleSubmit}> 
 
         <FormLabel as="u" color='teal' >Shoe Name </FormLabel>
@@ -84,6 +89,7 @@ function AddShoe(){
         </form>
 
         </FormControl>
+        
     )
 }
 

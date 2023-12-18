@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Outlet } from "react-router-dom";
 import { ChakraProvider, RangeSliderProvider,Button,size,Heading} from '@chakra-ui/react'
 
 
 import Signup from "./Signup";
 import Navbar from "./Navbar";
 import AddShoe from "./AddShoe"
+import Home from "./Home";
 
 
 
@@ -23,6 +24,7 @@ function App() {
       }
     })
   }, [])
+  
 
   function handleLogout(){
     fetch("/logout",{
@@ -48,13 +50,8 @@ function App() {
         <ChakraProvider>
         <div>
           <Navbar handleLogout={handleLogout}/>
-          <Heading as='h1' size='4xl' noOfLines={1}>
-          Enter your shoe information below!
-          </Heading>
-          <AddShoe/>
-          
-
         </div>
+          <Outlet context={user}/>
 
 
           
