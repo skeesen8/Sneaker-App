@@ -1,35 +1,46 @@
 import { useState } from "react"
 import {NumberInput, NumberInputField, NumberInputStepper, NumberIncrementStepper, NumberDecrementStepper,Flex
-,Slider,SliderTrack,SliderFilledTrack,SliderThumb,ChakraProvider,Button} from '@chakra-ui/react'
-
+,Slider,SliderTrack,SliderFilledTrack,SliderThumb,ChakraProvider,Button,Alert,AlertIcon,AlertTitle,AlertDescription} from '@chakra-ui/react'
 import {useParams} from 'react-router-dom'
+
+// import BidAlert from "./BidAlert"
+
 
 
     function AddBid({price,}) {
             const [value, setValue] = useState(0)
-            const [bid_amount,setBidPrice] = useState("")
+            // const [bid_amount,setBidPrice] = useState("")
             const handleChange = (value) => setValue(value)
             const format = (val) => `$` + val
             const parse = (val) => val.replace(/^\$/, '')
             let {id}= useParams()
-            console.log(id)
-            console.log(value)
+
+            function alert(){
+              console.log("did this work")
+              return(
+                <ChakraProvider>
+                  <Alert status='error'>
+                  <AlertIcon />
+                  <AlertTitle>Your browser is outdated!</AlertTitle>
+                  <AlertDescription>Your Chakra experience may be degraded.</AlertDescription>
+                  </Alert>
+                </ChakraProvider>
 
 
-            function handleBidAmout(){
-                setBidPrice(value)
+
+              )
             }
+
+
           
 
             function updateItemPrice(e){
                 e.preventDefault();
-                handleBidAmout()
-                // setBidPrice(value)
                 const updatedBid ={
-                    bid_amount:bid_amount,
+                    bid_amount:(value),
                     listing_id:parseInt(id),
+
                     users_id:4,
-                    // created_at:created_at,
                 }
                 fetch(`/bids`,{
                     method:'POST',
@@ -39,6 +50,8 @@ import {useParams} from 'react-router-dom'
                     body: JSON.stringify(updatedBid),
                 })
                 .then((response) => response.text())
+                alert()
+                
             }
           
             return (
