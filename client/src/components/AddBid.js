@@ -31,9 +31,6 @@ import {useParams} from 'react-router-dom'
               )
             }
 
-
-          
-
             function updateItemPrice(e){
                 e.preventDefault();
                 const updatedBid ={
