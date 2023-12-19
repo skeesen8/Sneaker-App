@@ -40,7 +40,7 @@ class Listing(SerializerMixin, db.Model):
 class User(SerializerMixin, db.Model):
     __tablename__ = 'users'
 
-    serialize_rules =('-password_hash','-bids.user')
+    serialize_rules =('-_password_hash','-bids.user')
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)

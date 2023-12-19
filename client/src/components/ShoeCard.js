@@ -1,6 +1,10 @@
 import { useNavigate } from "react-router-dom"
+import { ChakraProvider,Text,Card,CardBody,CardFooter,Image,Stack,Heading,
+    Divider,ButtonGroup,Button} from '@chakra-ui/react'
 
-function ShoeCard({price,description,image,brand,favorite,shoeName,id}){
+
+
+function ShoeCard({price,description,image,shoeName,id,setListings,userId}){
 
     const navigate=useNavigate()
 
@@ -8,22 +12,60 @@ function ShoeCard({price,description,image,brand,favorite,shoeName,id}){
     console.log(`clicked ${id}`)
     navigate(`/listings/${id}`)
 }
+    function handleDelete(){
+        console.log(id)
+        fetch(`/listings/${id}`, {
+            method: 'DELETE',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          })
+           .then((response) => {
+        if (response.ok) {
+          setListings((prevShoes) => prevShoes.filter((shoeSummary) => shoeSummary.id !== id));
+        } 
+        else {
+          console.error('Failed to delete Shoe');
+        }
+      })
+    }
 
     return(
-        <div onClick = {handleClick}>
-            <div>
-            {shoeName}
-            </div>
-            <div>
-            {price}
-            </div>
-            <div>
-            {brand}
-            </div>
-            <img src={image}/>
-            {favorite}
+        <ChakraProvider >
+        <Card maxW='sm' borderColor='teal' >
+        <CardBody>
+            <Image
+            src={image}
+            alt={description}
+            borderRadius='lg'
+            />
+            <Stack mt='6' spacing='3' >
+            <Heading size='md'>{shoeName}</Heading>
+            <Text>
+                {description}
+            </Text>
+            <Text color='blue.600' fontSize='2xl'>
+                ${price}
+            </Text>
+            </Stack>
+        </CardBody>
+        <Divider />
+        <CardFooter>
+            <ButtonGroup spacing='2'>
+            <Button onClick={handleClick} variant='ghost' colorScheme='teal'>
+                Bid now
+            </Button>
+            <Button onClick={handleClick} variant='ghost' colorScheme='teal'>
+                More Details
+            </Button>
+            <Button onClick={handleDelete} variant='ghost' colorScheme='red'>Delete</Button>
+            </ButtonGroup>
+        </CardFooter>
+        </Card>
+              
+    </ChakraProvider>
+ 
 
-        </div>
     )
 }
 

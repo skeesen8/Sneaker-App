@@ -3,6 +3,7 @@ import App from "./components/App";
 import "./index.css";
 import { createRoot } from "react-dom/client";
 import {createBrowserRouter,RouterProvider} from "react-router-dom"
+import { ChakraProvider } from "@chakra-ui/react";
 import ReactDOM from 'react-dom/client';
 import Navbar from "./components/Navbar";
 import ShoesContainer from "./components/ShoesContainer";
@@ -12,7 +13,9 @@ import Bids from "./components/Bids";
 
 
 
+
 const routes=[
+    
     {
         path:"/",
         element:<><App/></>
