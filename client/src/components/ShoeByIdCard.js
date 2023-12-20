@@ -6,8 +6,9 @@ import { ChakraProvider,Flex,Center,Text,Square,Box,Card,CardHeader,CardBody,Car
     Divider,ButtonGroup,Button,Badge} from '@chakra-ui/react'
 
 
-function ShoeByIdCard({ShoeById,setShoeById,image,brand,price,id,description,shoeName}){
-    console.log(brand)   
+function ShoeByIdCard({ShoeById,setShoeById,image,brand,price,id,description,shoeName,bids}){
+   console.log(bids)
+  
       return (
        <ChakraProvider>
         <Center>
@@ -37,7 +38,6 @@ function ShoeByIdCard({ShoeById,setShoeById,image,brand,price,id,description,sho
               fontWeight='semibold'
               as='h4'
               lineHeight='tight'
-              //   noOfLines={1}
               >
               {description}
             </Box>
@@ -66,35 +66,6 @@ function ShoeByIdCard({ShoeById,setShoeById,image,brand,price,id,description,sho
                 </ChakraProvider>
       )
     }
-// return(
-//     <ChakraProvider>
-        
-    
 
-        
-        {/* <Flex color='white'>
-        <Center w='1000px' bg='grey.100'>
-        <img className="shoebyid" src={image}/>
-        </Center>
-        <Square bg='teal.300' size='150px'>
-
-            <Text>current price ${price}</Text>
-        </Square>
-        <Box flex='2' bg='grey'>
-            <Text>{shoeName}{brand}{description}</Text>
-        </Box>
-        </Flex>
-        
-
-    <div>
-        <AddBid id={id} price={price}/>
-        
-    </div> */}
-
-        
-    // </ChakraProvider>
-
-// )
-// }
 
 export default ShoeByIdCard

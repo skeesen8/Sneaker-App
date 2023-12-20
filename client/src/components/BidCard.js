@@ -1,13 +1,17 @@
 import { ChakraProvider,Button,VStack,Box,StackDivider,Heading,Text } from "@chakra-ui/react"
 import {useEffect,useState} from "react"
-import { useParams} from 'react-router-dom'
+import { Navigate, useParams,useNavigate} from 'react-router-dom'
 
 function BidCard({bid_amount,users_id,created_at,listing_id,setBidSummary,id,image,shoeName,price,name}){
 
-    
+    const navigate = useNavigate();
     const bidNumber=parseInt(bid_amount)
     const priceNubmer=parseInt(price)
     const shoeTotal=(bidNumber+priceNubmer)
+
+    function handleNavigate(){
+      navigate(`/listings/${listing_id}`)
+    }
 
     function handleDeleteRequest(){
         fetch(`/bids/${id}`, {
@@ -35,7 +39,7 @@ function BidCard({bid_amount,users_id,created_at,listing_id,setBidSummary,id,ima
                       <h3>total shoe cost now =${shoeTotal} </h3>
                       <h3>This bid was added at {created_at}</h3>
                       <h3>{shoeName}</h3>
-                      <img className="bidimage" src={image}/>
+                      <img className="bidimage" src={image} onClick={handleNavigate}/>
                       <Button onClick={handleDeleteRequest}>delete</Button>
 
                    </div>      
