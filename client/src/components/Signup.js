@@ -3,6 +3,7 @@ import { useFormik } from 'formik';
 import * as yup from "yup";
 
 import { useState } from 'react'
+import Home from './Home';
 
 
 
@@ -76,8 +77,10 @@ function Signup({setUser}){
             <Button colorScheme='teal' size='md' type = 'submit'>Submit</Button>
 
             </form>
+            <Home/>
 
             </FormControl>
+            
 
             
        
@@ -97,6 +100,7 @@ function Signup({setUser}){
             <Button colorScheme='teal' size='md' type = 'submit'>Submit</Button>
 
             </form>
+            <Home/>
 
             </FormControl>
 

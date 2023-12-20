@@ -5,9 +5,10 @@ import ShoeByIdCard from './ShoeByIdCard';
 import BidById from './BidById';
 
 function ShoeById(){
+    
     let {id}=useParams()
     const [shoeById,setShoeById]=useState([])
-    console.log(shoeById)
+    
 
 useEffect(()=>{
     console.log(id)

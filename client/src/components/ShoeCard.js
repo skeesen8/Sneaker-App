@@ -1,12 +1,17 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate,useOutletContext} from "react-router-dom"
 import { ChakraProvider,Text,Card,CardBody,CardFooter,Image,Stack,Heading,
     Divider,ButtonGroup,Button} from '@chakra-ui/react'
 
 
 
+
 function ShoeCard({price,description,image,shoeName,id,setListings,userId}){
+    const user = useOutletContext();
+    
+
 
     const navigate=useNavigate()
+  
 
     function handleClick(){
     console.log(`clicked ${id}`)
@@ -58,13 +63,13 @@ function ShoeCard({price,description,image,shoeName,id,setListings,userId}){
             <Button onClick={handleClick} variant='ghost' colorScheme='teal'>
                 More Details
             </Button>
-            <Button onClick={handleDelete} variant='ghost' colorScheme='red'>Delete</Button>
+            {user.id==userId ? <Button onClick={handleDelete} variant='ghost' colorScheme='red'>Delete</Button>:""}
             </ButtonGroup>
         </CardFooter>
         </Card>
               
     </ChakraProvider>
- 
+//  {isLoggedIn ? <h1>Welcome back!</h1> : <h1>Please log in.</h1>}
 
     )
 }
