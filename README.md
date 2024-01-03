@@ -1,352 +1,271 @@
-# Phase 4 Full-Stack Application Project Template
-
-## Learning Goals
-
-- Discuss the basic directory structure of a full-stack Flask/React application.
-- Carry out the first steps in creating your Phase 4 project.
-
----
-
-## Introduction
-
-Fork and clone this lesson for a template for your full-stack application. Take
-a look at the directory structure before we begin (NOTE: node_modules will be
-generated in a subsequent step):
+<a name="readme-top"></a>
+<!--
+*** Thanks for checking out the Best-README-Template. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+*** or simply open an issue with the tag "enhancement".
+*** Don't forget to give the project a star!
+*** Thanks again! Now go create something AMAZING! :D
+-->
+
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
+
+  <h3 align="center">Best-README-Template</h3>
+
+  <p align="center">
+    An awesome README template to jumpstart your projects!
+    <br />
+    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    ·
+    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+  </p>
+</div>
+
+
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-```console
-$ tree -L 2
-$ # the -L argument limits the depth at which we look into the directory structure
-.
-├── CONTRIBUTING.md
-├── LICENSE.md
-├── Pipfile
-├── README.md
-├── client
-│   ├── README.md
-│   ├── package.json
-│   ├── public
-│   └── src
-└── server
-    ├── app.py
-    ├── config.py
-    ├── models.py
-    └── seed.py
-```
 
-A `migrations` folder will be added to the `server` directory in a later step.
 
-The `client` folder contains a basic React application, while the `server`
-folder contains a basic Flask application. You will adapt both folders to
-implement the code for your project .
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-NOTE: If you did not previously install `tree` in your environment setup, MacOS
-users can install this with the command `brew install tree`. WSL and Linux users
-can run `sudo apt-get install tree` to download it as well.
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-## Where Do I Start?
+There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
 
-Just as with your Phase 3 Project, this will likely be one of the biggest
-projects you've undertaken so far. Your first task should be creating a Git
-repository to keep track of your work and roll back any undesired changes.
+Here's why:
+* Your time should be focused on creating something amazing. A project that solves a problem and helps others
+* You shouldn't be doing the same tasks over and over like creating a README from scratch
+* You should implement DRY principles to the rest of your life :smile:
 
-### Removing Existing Git Configuration
+Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
 
-If you're using this template, start off by removing the existing metadata for
-Github and Canvas. Run the following command to carry this out:
+Use the `BLANK_README.md` to get started.
 
-```console
-$ rm -rf .git .canvas
-```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-The `rm` command removes files from your computer's memory. The `-r` flag tells
-the console to remove _recursively_, which allows the command to remove
-directories and the files within them. `-f` removes them permanently.
 
-`.git` contains this directory's configuration to track changes and push to
-Github (you want to track and push _your own_ changes instead), and `.canvas`
-contains the metadata to create a Canvas page from your Git repo. You don't have
-the permissions to edit our Canvas course, so it's not worth keeping around.
 
-### Creating Your Own Git Repo
+### Built With
 
-First things first- rename this directory! Once you have an idea for a name,
-move one level up with `cd ..` and run
-`mv python-p4-project-template <new-directory-name>` to change its name (replace
-<new-directory-name> with an appropriate project directory name).
+This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-> **Note: If you typed the `mv` command in a terminal within VS Code, you should
-> close VS Code then reopen it.**
+* [![Next][Next.js]][Next-url]
+* [![React][React.js]][React-url]
+* [![Vue][Vue.js]][Vue-url]
+* [![Angular][Angular.io]][Angular-url]
+* [![Svelte][Svelte.dev]][Svelte-url]
+* [![Laravel][Laravel.com]][Laravel-url]
+* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+* [![JQuery][JQuery.com]][JQuery-url]
 
-> **Note: `mv` actually stands for "move", but your computer interprets this
-> rename as a move from a directory with the old name to a directory with a new
-> name.**
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-`cd` back into your new directory and run `git init` to create a local git
-repository. Add all of your local files to version control with `git add --all`,
-then commit them with `git commit -m'initial commit'`. (You can change the
-message here- this one is just a common choice.)
 
-Navigate to [GitHub](https://github.com). In the upper-right corner of the page,
-click on the "+" dropdown menu, then select "New repository". Enter the name of
-your local repo, choose whether you would like it to be public or private, make
-sure "Initialize this repository with a README" is unchecked (you already have
-one), then click "Create repository".
 
-Head back to the command line and enter
-`git remote add origin git@github.com:github-username/new-repository-name.git`.
-NOTE: Replace `github-username` with your github username, and
-`new-repository-name` with the name of your new repository. This command will
-map the remote repository to your local repository. Finally, push your first
-commit with `git push -u origin main`.
-
-Your project is now version-controlled locally and online. This will allow you
-to create different versions of your project and pick up your work on a
-different machine if the need arises.
+<!-- GETTING STARTED -->
+## Getting Started
 
----
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
 
-## Setup
+### Prerequisites
 
-### `server/`
+This is an example of how to list things you need to use the software and how to install them.
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-The `server/` directory contains all of your backend code.
+### Installation
 
-`app.py` is your Flask application. You'll want to use Flask to build a simple
-API backend like we have in previous modules. You should use Flask-RESTful for
-your routes. You should be familiar with `models.py` and `seed.py` by now, but
-remember that you will need to use Flask-SQLAlchemy, Flask-Migrate, and
-SQLAlchemy-Serializer instead of SQLAlchemy and Alembic in your models.
+_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-The project contains a default `Pipfile` with some basic dependencies. You may
-adapt the `Pipfile` if there are additional dependencies you want to add for
-your project.
+1. Get a free API Key at [https://example.com](https://example.com)
+2. Clone the repo
+   ```sh
+   git clone https://github.com/your_username_/Project-Name.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Enter your API in `config.js`
+   ```js
+   const API_KEY = 'ENTER YOUR API';
+   ```
 
-To download the dependencies for the backend server, run:
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-```console
-pipenv install
-pipenv shell
-```
 
-You can run your Flask API on [`localhost:5555`](http://localhost:5555) by
-running:
 
-```console
-python server/app.py
-```
+<!-- USAGE EXAMPLES -->
+## Usage
 
-Check that your server serves the default route `http://localhost:5555`. You
-should see a web page with the heading "Project Server".
+Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-### `client/`
+_For more examples, please refer to the [Documentation](https://example.com)_
 
-The `client/` directory contains all of your frontend code. The file
-`package.json` has been configured with common React application dependencies,
-include `react-router-dom`. The file also sets the `proxy` field to forward
-requests to `"http://localhost:5555". Feel free to change this to another port-
-just remember to configure your Flask app to use another port as well!
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-To download the dependencies for the frontend client, run:
 
-```console
-npm install --prefix client
-```
 
-You can run your React app on [`localhost:3000`](http://localhost:3000) by
-running:
+<!-- ROADMAP -->
+## Roadmap
 
-```sh
-npm start --prefix client
-```
+- [x] Add Changelog
+- [x] Add back to top links
+- [ ] Add Additional Templates w/ Examples
+- [ ] Add "components" document to easily copy & paste sections of the readme
+- [ ] Multi-language Support
+    - [ ] Chinese
+    - [ ] Spanish
 
-Check that your the React client displays a default page
-`http://localhost:3000`. You should see a web page with the heading "Project
-Client".
+See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
 
-## Generating Your Database
-
-NOTE: The initial project directory structure does not contain the `instance` or
-`migrations` folders. Change into the `server` directory:
-
-```console
-cd server
-```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Then enter the commands to create the `instance` and `migrations` folders and
-the database `app.db` file:
 
-```
-flask db init
-flask db upgrade head
-```
 
-Type `tree -L 2` within the `server` folder to confirm the new directory
-structure:
+<!-- CONTRIBUTING -->
+## Contributing
 
-```console
-.
-├── app.py
-├── config.py
-├── instance
-│   └── app.db
-├── migrations
-│   ├── README
-│   ├── __pycache__
-│   ├── alembic.ini
-│   ├── env.py
-│   ├── script.py.mako
-│   └── versions
-├── models.py
-└── seed.py
-```
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-Edit `models.py` and start creating your models. Import your models as needed in
-other modules, i.e. `from models import ...`.
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
 
-Remember to regularly run
-`flask db revision --autogenerate -m'<descriptive message>'`, replacing
-`<descriptive message>` with an appropriate message, and `flask db upgrade head`
-to track your modifications to the database and create checkpoints in case you
-ever need to roll those modifications back.
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-> **Tip: It's always a good idea to start with an empty revision! This allows
-> you to roll all the way back while still holding onto your database. You can
-> create this empty revision with `flask db revision -m'Create DB'`.**
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-If you want to seed your database, now would be a great time to write out your
-`seed.py` script and run it to generate some test data. Faker has been included
-in the Pipfile if you'd like to use that library.
 
----
 
-#### `config.py`
+<!-- LICENSE -->
+## License
 
-When developing a large Python application, you might run into a common issue:
-_circular imports_. A circular import occurs when two modules import from one
-another, such as `app.py` and `models.py`. When you create a circular import and
-attempt to run your app, you'll see the following error:
+Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-```console
-ImportError: cannot import name
-```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-If you're going to need an object in multiple modules like `app` or `db`,
-creating a _third_ module to instantiate these objects can save you a great deal
-of circular grief. Here's a good start to a Flask config file (you may need more
-if you intend to include features like authentication and passwords):
 
-```py
-# Standard library imports
 
-# Remote library imports
-from flask import Flask
-from flask_cors import CORS
-from flask_migrate import Migrate
-from flask_restful import Api
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import MetaData
+<!-- CONTACT -->
+## Contact
 
-# Local imports
+Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
 
-# Instantiate app, set attributes
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.json.compact = False
+Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
 
-# Define metadata, instantiate db
-metadata = MetaData(naming_convention={
-    "fk": "fk_%(table_name)s_%(column_0_name)s_%(referred_table_name)s",
-})
-db = SQLAlchemy(metadata=metadata)
-migrate = Migrate(app, db)
-db.init_app(app)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# Instantiate REST API
-api = Api(app)
 
-# Instantiate CORS
-CORS(app)
 
-```
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
 
-Now let's review that last line...
+Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
-#### CORS
+* [Choose an Open Source License](https://choosealicense.com)
+* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
+* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
+* [Malven's Grid Cheatsheet](https://grid.malven.co/)
+* [Img Shields](https://shields.io)
+* [GitHub Pages](https://pages.github.com)
+* [Font Awesome](https://fontawesome.com)
+* [React Icons](https://react-icons.github.io/react-icons/search)
 
-CORS (Cross-Origin Resource Sharing) is a system that uses HTTP headers to
-determine whether resources from different servers-of-origin can be accessed. If
-you're using the fetch API to connect your frontend to your Flask backend, you
-need to configure CORS on your Flask application instance. Lucky for us, that
-only takes one line:
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-```py
-CORS(app)
 
-```
 
-By default, Flask-CORS enables CORS on all routes in your application with all
-fetching servers. You can also specify the resources that allow CORS. The
-following specifies that routes beginning with `api/` allow CORS from any
-originating server:
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
+[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
+[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
+[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/othneildrew
+[product-screenshot]: images/screenshot.png
+[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Next-url]: https://nextjs.org/
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
+[Vue-url]: https://vuejs.org/
+[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
+[Angular-url]: https://angular.io/
+[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
+[Svelte-url]: https://svelte.dev/
+[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
+[Laravel-url]: https://laravel.com
+[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+[Bootstrap-url]: https://getbootstrap.com
+[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
+[JQuery-url]: https://jquery.com 
 
-```py
-CORS(app, resources={r"/api/*": {"origins": "*"}})
-
-```
-
-You can also set this up resource-by-resource by importing and using the
-`@cross_origin` decorator:
-
-```py
-@app.route("/")
-@cross_origin()
-def howdy():
-  return "Howdy partner!"
-
-```
-
----
-
-## Updating Your README.md
-
-`README.md` is a Markdown file that describes your project. These files can be
-used in many different ways- you may have noticed that we use them to generate
-entire Canvas lessons- but they're most commonly used as homepages for online
-Git repositories. **When you develop something that you want other people to
-use, you need to have a README.**
-
-Markdown is not a language that we cover in Flatiron's Software Engineering
-curriculum, but it's not a particularly difficult language to learn (if you've
-ever left a comment on Reddit, you might already know the basics). Refer to the
-cheat sheet in this lesson's resources for a basic guide to Markdown.
-
-### What Goes into a README?
-
-This README should serve as a template for your own- go through the important
-files in your project and describe what they do. Each file that you edit (you
-can ignore your migration files) should get at least a paragraph. Each function
-should get a small blurb.
-
-You should descibe your application first, and with a good level of detail. The
-rest should be ordered by importance to the user. (Probably routes next, then
-models.)
-
-Screenshots and links to resources that you used throughout are also useful to
-users and collaborators, but a little more syntactically complicated. Only add
-these in if you're feeling comfortable with Markdown.
-
----
-
-## Conclusion
-
-A lot of work goes into a full-stack application, but it all relies on concepts
-that you've practiced thoroughly throughout this phase. Hopefully this template
-and guide will get you off to a good start with your Phase 4 Project.
-
-Happy coding!
-
----
 
 ## Resources
 
