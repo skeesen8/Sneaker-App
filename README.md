@@ -1,7 +1,5 @@
 <a name="readme-top"></a>
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Stargazers][stars-shield]][stars-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
