@@ -58,7 +58,7 @@ function ShoeCard({price,description,image,shoeName,id,setListings,userId}){
         <CardFooter>
             <ButtonGroup spacing='2'>
             <Button onClick={handleClick} variant='ghost' colorScheme='teal'>
-                Bid now
+                Bid on Shoe
             </Button>
             <Button onClick={handleClick} variant='ghost' colorScheme='teal'>
                 More Details
