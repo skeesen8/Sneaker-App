@@ -1,20 +1,5 @@
 <a name="readme-top"></a>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
 
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 [![Contributors][contributors-shield]][contributors-url]
 [![Stargazers][stars-shield]][stars-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
@@ -91,8 +76,6 @@ Core Features:
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
 * [![React][React.js]][React-url]
 * [![Flask][Flask]][Flask-url]
 * [![Python][Python.org]][Python-url]
@@ -105,24 +88,12 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 <!-- GETTING STARTED -->
 ## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1.  Clone the repo
    ```sh
    git clone https://github.com/your_username_/Project-Name.git
    ```
@@ -130,10 +101,23 @@ _Below is an example of how you can instruct your audience on installing and set
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+4. CD into Client server 
+   ```sh
+   cd client
    ```
+5. run client 
+   ```sh
+   npm start
+   ```
+6. Create new terminal window and CD into Server 
+   ```sh
+   cd server
+   ```
+7. run server 
+   ```sh
+   flask run --port 5555
+   ```
+7. navigate to web browser and explore webpage 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -153,53 +137,19 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+- [ ] Add admin page per user to show active bids and any won auctions
+- [ ] Add notification system to alert users quickly
+- [ ] Add bid reports on each unique shoe page
+- [ ] Add payment portal
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Sackett Keesen - [@LinkedIn](https://www.linkedin.com/in/sackett-keesen/) - skeesen8@gmail.com
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -208,16 +158,8 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
 * [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -244,11 +186,3 @@ Use this space to list resources you find helpful and would like to give credit 
 [Chakra-url]: https://chakra-ui.com/
  
 
-
-## Resources
-
-- [Setting up a respository - Atlassian](https://www.atlassian.com/git/tutorials/setting-up-a-repository)
-- [Create a repo- GitHub Docs](https://docs.github.com/en/get-started/quickstart/create-a-repo)
-- [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
-- [Python Circular Imports - StackAbuse](https://stackabuse.com/python-circular-imports/)
-- [Flask-CORS](https://flask-cors.readthedocs.io/en/latest/)
