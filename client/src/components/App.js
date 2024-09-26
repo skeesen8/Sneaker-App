@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Switch, Route } from "react-router-dom";
-import { ChakraProvider, RangeSliderProvider,Button,size } from '@chakra-ui/react'
+import { Switch, Route, Outlet } from "react-router-dom";
+import { ChakraProvider, RangeSliderProvider,Button,size,Heading} from '@chakra-ui/react'
 
 
 import Signup from "./Signup";
 import Navbar from "./Navbar";
 import AddShoe from "./AddShoe"
+import Home from "./Home";
 
 
 
@@ -23,6 +24,7 @@ function App() {
       }
     })
   }, [])
+  
 
   function handleLogout(){
     fetch("/logout",{
@@ -36,8 +38,6 @@ function App() {
 
   }
 
-
-
     if(!user){
       return(
 
@@ -48,12 +48,10 @@ function App() {
 
       return(
         <ChakraProvider>
-
         <div>
           <Navbar handleLogout={handleLogout}/>
-          <AddShoe/>
-
         </div>
+          <Outlet context={user}/>
 
 
           

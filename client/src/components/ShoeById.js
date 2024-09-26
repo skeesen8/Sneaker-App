@@ -1,26 +1,29 @@
 import React, {useState, useEffect} from 'react';
-import { Link, useParams} from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 
 import ShoeByIdCard from './ShoeByIdCard';
+import BidById from './BidById';
 
 function ShoeById(){
+    
     let {id}=useParams()
     const [shoeById,setShoeById]=useState([])
+    
 
 useEffect(()=>{
-    console.log(id)
+
     fetch(`/listings/${id}`)
     .then((resp)=>resp.json())
     .then((oneShoeData)=>setShoeById(oneShoeData))
-    
-
 },[])
 
-console.log(shoeById.image)
+console.log()
 
 const renderShoe = (
-    <ShoeByIdCard id={id} price={shoeById.price} image={shoeById.image} brand={ShoeById.brand} setShoeById={setShoeById}/>
+    <ShoeByIdCard id={id} shoeName={shoeById.shoeName} description={shoeById.description} 
+    price={shoeById.price} image={shoeById.image} brand={ShoeById.brand} setShoeById={setShoeById} bids={shoeById.bids}/>
 )
+
 
 
     return(

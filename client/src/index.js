@@ -3,34 +3,48 @@ import App from "./components/App";
 import "./index.css";
 import { createRoot } from "react-dom/client";
 import {createBrowserRouter,RouterProvider} from "react-router-dom"
+import { ChakraProvider } from "@chakra-ui/react";
 import ReactDOM from 'react-dom/client';
 import Navbar from "./components/Navbar";
 import ShoesContainer from "./components/ShoesContainer";
 import AddShoe from "./components/AddShoe"
 import ShoeById from "./components/ShoeById";
 import Bids from "./components/Bids";
+import ShoeCard from "./components/ShoeCard";
+import Home from "./components/Home";
 
 
 
 const routes=[
+    
     {
         path:"/",
-        element:<><App/></>
-    },{
-        // path:"/",
-        // element:<><Navbar/><AddShoe/></>
-
-    }, {
-        path:"/shoes",
-        element:<><Navbar /><ShoesContainer/></>
-    },{
-        path:"/bids",
-        element:<><Navbar/><Bids/></>
+        element:<App/>,
+        children:[
+            {
+                index:true,
+                element:<><AddShoe/><Home/> </>
         
-    },{
-        path:"/listings/:id",
-        element:<><Navbar /><ShoeById/></>
-
+            }, {
+                path:"/shoes",
+                element:<ShoesContainer/>,
+                children:[
+                    {
+                        path:"/shoes",
+                        element:<ShoeCard/>
+                    }
+                ]
+            },{
+                path:"/bids",
+                element:<Bids/>
+                
+            },{
+                path:"/listings/:id",
+                element:<ShoeById/>
+        
+            }
+            
+        ]
     }
 ]
 const router=createBrowserRouter(routes)
@@ -40,7 +54,3 @@ root.render(
     <RouterProvider router={router}/>
     );
 
-
-    // const container = document.getElementById("root");
-    // const root = createRoot(container);
-    // root.render(<App />);

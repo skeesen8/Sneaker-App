@@ -1,3 +1,4 @@
+
 :root {
   --bg: #282c34;
   --header: #fff;
@@ -5,3 +6,16 @@
   --text: hsla(0, 0%, 100%, 0.88);
 }
 
+.shoebyid{
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.bidimage{
+  height:fit-content;
+  width:fit-content;
+  justify-content: center;
+}
+.bidcontent{
+  text-align: center;
+}

@@ -1,11 +1,13 @@
 import ShoeCard from './ShoeCard';
 
 import React, {useState, useEffect} from 'react';
+import { useOutletContext,Outlet } from 'react-router-dom';
+import { SimpleGrid, ChakraProvider} from '@chakra-ui/react'
 
 function ShoesContainer(){
     const [listings,setListings]=useState([])
-
-    
+    const user = useOutletContext();
+    console.log(user.id)
 
     useEffect(()=>{
         fetch('/listings')
@@ -14,12 +16,12 @@ function ShoesContainer(){
         
     },[])
     
-
-    
-    
     const renderListings = listings.map((lObj)=>{
+       
         return(
+            
             <ShoeCard
+            setListings={setListings}
             key={lObj.id}
             id={lObj.id}
             brand={lObj.brand}
@@ -28,15 +30,23 @@ function ShoesContainer(){
             image={lObj.image}
             price={lObj.price}
             shoeName={lObj.shoeName}
-            user_id={lObj.user_id} 
+            userId={lObj.user_id}
+             
             />
         )
+       
     })
 
     return(
-        <ul>
-           {renderListings}
-        </ul> 
+        <ChakraProvider>
+            <SimpleGrid columns={3} spacing={5}>
+             {renderListings}     
+            </SimpleGrid>
+            <Outlet context={user}/>
+
+        </ChakraProvider>
+
+
         
 
     )

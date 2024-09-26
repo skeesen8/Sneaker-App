@@ -1,28 +1,13 @@
 import { useEffect,useState } from "react"
 import { useParams} from 'react-router-dom'
+import { ChakraProvider,Button,VStack,Box,StackDivider,Text,Heading,desc } from "@chakra-ui/react"
 
 import BidCard from "./BidCard"
 
 function Bids(){
     const [bidSummary,setBidSummary]=useState([])
-    let {id}= useParams()
-
-    const handleDelete=(bidId)=>{
-        console.log(id)
-    fetch(`/bids/${id}`, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => {
-        if (response.ok) {
-          setBidSummary((prevBids) => prevBids.filter((bidSummary) => bidSummary.id !== bidId));
-        } else {
-          console.error('Failed to delete Bid');
-        }
-      })
-    }
+    
+    
 
     useEffect(()=>{
 
@@ -37,25 +22,37 @@ function Bids(){
         
                 <BidCard
                 key={bidObj.id}
+                id={bidObj.id}
                 bid_amount={bidObj.bid_amount}
+                image={bidObj.listing.image}
+                shoeName={bidObj.listing.shoeName}
+                name={bidObj.user.name}
+                price={bidObj.listing.price}
                 listing_id={bidObj.listing_id}
                 created_at={bidObj.created_at}
-                users_id={bidObj.users_id}
-
-                handleDelete={handleDelete} 
+                users_id={bidObj.users_id} 
                 setBidSummary={setBidSummary}
-                />
-    
+                /> 
             )
-
-
-
     }) : []
  
 
 
     return(
-        (renderBids)
+        <ChakraProvider>
+
+
+            <VStack
+            divider={<StackDivider borderColor='teal.500' borderWidth='3px' />}
+            spacing={4}
+            align='stretch'
+            >
+            {renderBids}
+            </VStack>
+
+            {/* {renderBids} */}
+
+        </ChakraProvider>
     )
 }
 

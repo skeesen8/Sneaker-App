@@ -1,11 +1,13 @@
 import * as React from "react";
 import {Link} from "react-router-dom";
-import {Breadcrumb,BreadcrumbItem,BreadcrumbLink,BreadcrumbSeparator,Button} from '@chakra-ui/react'
+import {Breadcrumb,BreadcrumbItem,BreadcrumbLink,BreadcrumbSeparator,Button,ChakraProvider} from '@chakra-ui/react'
 
 
 function Navbar({handleLogout}){
 
     return(
+        <ChakraProvider>
+
         <Breadcrumb>             
                     <BreadcrumbItem>
                         <BreadcrumbLink as={Link} to='/'>Home</BreadcrumbLink>
@@ -20,6 +22,7 @@ function Navbar({handleLogout}){
                     </BreadcrumbItem>      
                     <Button onClick={handleLogout} size="sm" colorScheme='teal'>Logout</Button>  
         </Breadcrumb>
+        </ChakraProvider>
     )
 }
 

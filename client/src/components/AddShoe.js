@@ -1,7 +1,9 @@
 
 import React, {useState,} from 'react';
 import { useNavigate } from "react-router-dom";
-import {FormControl, FormLabel,Input,Button, ChakraProvider} from '@chakra-ui/react'
+import {FormControl, FormLabel,Input,Button, ChakraProvider,Heading} from '@chakra-ui/react'
+
+import Home from './Home';
 
 function AddShoe(){
     const navigate = useNavigate();
@@ -11,7 +13,6 @@ function AddShoe(){
     const [shoeName,newShoeName]=useState('')
     const [brand,setBrand]=useState('')
     const [description,setDescription]=useState('')
-    const [user_id,set_user_id]=useState('')
     const [favorite,setFavorite]=useState(false)
 
     function handleNewShoe(e){
@@ -29,9 +30,6 @@ function AddShoe(){
     function handleDescription(e){
         setDescription(e.target.value)
     }
-    function handleUserId(e){
-        set_user_id(e.target.value)
-    }
     
 
     function handleSubmit(e){
@@ -43,7 +41,6 @@ function AddShoe(){
             description:description,
             brand:brand,
             favorite:favorite,
-            user_id:user_id
         }
         fetch('/listings', {
             method: "POST",
@@ -66,21 +63,24 @@ function AddShoe(){
     return(
 
         <FormControl>
+            <Heading as='h1' size='4xl' noOfLines={1}>
+          Enter your shoe information below!
+          </Heading>
         <form onSubmit={handleSubmit}> 
 
-        <FormLabel>Shoe Name </FormLabel>
+        <FormLabel as="u" color='teal' >Shoe Name </FormLabel>
         <Input label='shoenName' id='shoeName' placeholder='Enter Shoe Name Here' value={shoeName} onChange ={handleNewShoe}/>
 
-        <FormLabel>Image</FormLabel>
+        <FormLabel as="u" color='teal'>Image</FormLabel>
         <Input label='image' id='image' placeholder='Enter Picture URL' value ={image} onChange ={handleImage}/>
 
-        <FormLabel>Price</FormLabel>
+        <FormLabel as="u" color='teal'>Price</FormLabel>
         <Input label='price' id='price' placeholder='Enter Initial Price' value ={price} onChange ={handlePrice}/>
 
-        <FormLabel>Description</FormLabel>
+        <FormLabel as="u" color='teal'>Description</FormLabel>
         <Input label='description' id='description' placeholder='Enter Shoe Description' value ={description} onChange ={handleDescription}/>
 
-        <FormLabel>Shoe Brand</FormLabel>
+        <FormLabel as="u" color='teal'>Shoe Brand</FormLabel>
         <Input label='brand' id='brand' placeholder='Enter Shoe Brand' value ={brand} onChange ={handleBrand}/>
        
 
@@ -89,7 +89,7 @@ function AddShoe(){
         </form>
 
         </FormControl>
-
+        
     )
 }
 

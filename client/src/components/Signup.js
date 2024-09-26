@@ -3,6 +3,7 @@ import { useFormik } from 'formik';
 import * as yup from "yup";
 
 import { useState } from 'react'
+import Home from './Home';
 
 
 
@@ -12,10 +13,8 @@ function Signup({setUser}){
     const [signup,setSignup]=useState(true)
 
     const signupSchema = yup.object().shape({
-        // name: yup.string().min(2,'must be at least 2 characters').max(20,"too long").required('Required Field'),
         username: yup.string().min(5,'must be at least 5 characters').max(20,"too long").required('Required Field'), 
-        password: yup.string().min(5,'must be at least 5 characters').max(20,"too long").required('Required Field'),
-        // email: yup.string().email('Must Be Valid Email Address').required('Required Field'),
+        password: yup.string().min(5,'must be at least 5 characters').max(20,"too long").required('Required Field'),      
 
     })
 
@@ -29,7 +28,6 @@ function Signup({setUser}){
         validationSchema:signupSchema,
 
         onSubmit:(values)=>{
-            console.log('clicked')
             const endpoint = signup ? '/users' : '/login'
             fetch(endpoint,{
                 method: 'POST',
@@ -79,8 +77,10 @@ function Signup({setUser}){
             <Button colorScheme='teal' size='md' type = 'submit'>Submit</Button>
 
             </form>
+            <Home/>
 
             </FormControl>
+            
 
             
        
@@ -100,6 +100,7 @@ function Signup({setUser}){
             <Button colorScheme='teal' size='md' type = 'submit'>Submit</Button>
 
             </form>
+            <Home/>
 
             </FormControl>
 
